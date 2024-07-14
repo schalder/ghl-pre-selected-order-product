@@ -1,3 +1,14 @@
+<?php
+// Enable CORS (replace * with specific origins if needed)
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization");
+
+// Output JavaScript content
+header("Content-Type: application/javascript");
+
+// Your script logic here
+?>
 (function () {
     function getURLParameter(name) {
         return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, null])[1].replace(/\+/g, '%20')) || null;
@@ -36,5 +47,4 @@
         } else {
             console.log("Checkout page ID or PID is null or undefined");
         }
-    });
-})();
+    })();
